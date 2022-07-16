@@ -1,5 +1,5 @@
 
-function MovePage(): JSX.Element {
+function MoviePage(): JSX.Element {
   return (
     <section className="film-card film-card--full">
       <div className="film-card__hero">
@@ -125,4 +125,4 @@ function MovePage(): JSX.Element {
     </section>);
 }
 
-export default MovePage;
+export default MoviePage;

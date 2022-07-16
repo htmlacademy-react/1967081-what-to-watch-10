@@ -9,11 +9,11 @@ const root = ReactDOM.createRoot(
 const Setting = {
   TITLE: 'The Grand Budapest Hotel',
   RELEASE_DATE: 2014,
-  GANRE: 'Drama',
+  GENRE: 'Drama',
 };
 
 root.render(
   <React.StrictMode>
-    <App title = {Setting.TITLE} releaseDate = {Setting.RELEASE_DATE} ganre = {Setting.GANRE} />
+    <App title = {Setting.TITLE} releaseDate = {Setting.RELEASE_DATE} genre = {Setting.GENRE} />
   </React.StrictMode>,
 );

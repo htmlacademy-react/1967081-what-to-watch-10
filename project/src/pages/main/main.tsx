@@ -1,7 +1,7 @@
 import FilmCard from '../../components/film-card/filmCard';
 import { AppMainProps } from '../../types/types';
 
-function MainPage({title, releaseDate, ganre}: AppMainProps): JSX.Element {
+function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
   return (
     <div>
       <div className="visually-hidden">
@@ -73,7 +73,7 @@ function MainPage({title, releaseDate, ganre}: AppMainProps): JSX.Element {
             <div className="film-card__desc">
               <h2 className="film-card__title">{title}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{ganre}</span>
+                <span className="film-card__genre">{genre}</span>
                 <span className="film-card__year">{releaseDate}</span>
               </p>
 
