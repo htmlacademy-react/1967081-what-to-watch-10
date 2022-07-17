@@ -1,5 +1,7 @@
+import { useParams } from 'react-router-dom';
 
 function MoviePage(): JSX.Element {
+  const params = useParams();
   return (
     <section className="film-card film-card--full">
       <div className="film-card__hero">
@@ -21,18 +23,18 @@ function MoviePage(): JSX.Element {
           <ul className="user-block">
             <li className="user-block__item">
               <div className="user-block__avatar">
-                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
+                <img src="/img/avatar.jpg" alt="User avatar" width="63" height="63" />
               </div>
             </li>
             <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
+              <a href="/" className="user-block__link">Sign out</a>
             </li>
           </ul>
         </header>
 
         <div className="film-card__wrap">
           <div className="film-card__desc">
-            <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+            <h2 className="film-card__title">The Grand Budapest Hotel id:{params.id}</h2>
             <p className="film-card__meta">
               <span className="film-card__genre">Drama</span>
               <span className="film-card__year">2014</span>
@@ -61,20 +63,20 @@ function MoviePage(): JSX.Element {
       <div className="film-card__wrap film-card__translate-top">
         <div className="film-card__info">
           <div className="film-card__poster film-card__poster--big">
-            <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+            <img src="/img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
           </div>
 
           <div className="film-card__desc">
             <nav className="film-nav film-card__nav">
               <ul className="film-nav__list">
                 <li className="film-nav__item">
-                  <a href="#" className="film-nav__link">Overview</a>
+                  <a href="/" className="film-nav__link">Overview</a>
                 </li>
                 <li className="film-nav__item film-nav__item--active">
-                  <a href="#" className="film-nav__link">Details</a>
+                  <a href="/" className="film-nav__link">Details</a>
                 </li>
                 <li className="film-nav__item">
-                  <a href="#" className="film-nav__link">Reviews</a>
+                  <a href="/" className="film-nav__link">Reviews</a>
                 </li>
               </ul>
             </nav>
@@ -88,18 +90,18 @@ function MoviePage(): JSX.Element {
                 <p className="film-card__details-item">
                   <strong className="film-card__details-name">Starring</strong>
                   <span className="film-card__details-value">
-                    <br>Bill Murray, </br>
-                    <br>Edward Norton,</br>
-                    <br>Jude Law,</br>
-                    <br>Willem Dafoe,</br>
-                    <br>Saoirse Ronan,</br>
-                    <br>Tony Revoloru,</br>
-                    <br>Tilda Swinton,</br>
-                    <br>Tom Wilkinson,</br>
-                    <br>Owen Wilkinson,</br>
-                    <br>Adrien Brody,</br>
-                    <br>Ralph Fiennes,</br>
-                    <br>Jeff Goldblum</br>
+                    <p>Bill Murray </p>
+                    <p>Edward Norton</p>
+                    <p>Jude Law</p>
+                    <p>Willem Dafoe</p>
+                    <p>Saoirse Ronan</p>
+                    <p>Tony Revoloru</p>
+                    <p>Tilda Swinton</p>
+                    <p>Tom Wilkinson</p>
+                    <p>Owen Wilkinson</p>
+                    <p>Adrien pody</p>
+                    <p>Ralph Fiennes</p>
+                    <p>Jeff Goldblum</p>
                   </span>
                 </p>
               </div>
