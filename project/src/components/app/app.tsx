@@ -17,9 +17,8 @@ function App({ title, releaseDate, genre }: AppMainProps): JSX.Element {
         <Route path='/'>
           <Route index element={<MainPage title={title} releaseDate={releaseDate} genre={genre} />} />
           <Route path='films'>
-            <Route path=':id' element={<MoviePage />}>
-              <Route path='review' element={<AddReview />}></Route>
-            </Route>
+            <Route path=':id' element={<MoviePage />}></Route>
+            <Route path=':id/review' element={<AddReview />}></Route>
           </Route>
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
