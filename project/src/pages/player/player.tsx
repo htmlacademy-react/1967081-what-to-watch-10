@@ -1,7 +1,10 @@
+import { useParams } from 'react-router-dom';
 
 function Player(): JSX.Element {
+  const params = useParams();
   return (
     <div className="player">
+      <h1>ID: {params.id}</h1>
       <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
 
       <button type="button" className="player__exit">Exit</button>
