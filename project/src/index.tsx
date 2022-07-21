@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
+import { FILMS } from './mocks/films';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -14,6 +15,6 @@ const Setting = {
 
 root.render(
   <React.StrictMode>
-    <App title = {Setting.TITLE} releaseDate = {Setting.RELEASE_DATE} genre = {Setting.GENRE} />
+    <App title = {Setting.TITLE} releaseDate = {Setting.RELEASE_DATE} genre = {Setting.GENRE} films = {FILMS}/>
   </React.StrictMode>,
 );

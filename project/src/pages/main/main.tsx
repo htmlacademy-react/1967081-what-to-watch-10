@@ -1,7 +1,9 @@
 import FilmCard from '../../components/film-card/filmCard';
-import { AppMainProps } from '../../types/types';
+import LogoFooter from '../../components/logo-footer/logo-footer';
+import Logo from '../../components/logo/logo';
+import { AppMainProps} from '../../types/types';
 
-function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
+function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Element {
   return (
     <div>
       <div className="visually-hidden">
@@ -44,14 +46,7 @@ function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header film-card__head">
-          <div className="logo">
-            <a href="/" className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
+          <Logo/>
           <ul className="user-block">
             <li className="user-block__item">
               <div className="user-block__avatar">
@@ -135,46 +130,16 @@ function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
+            {films.map((film) => (
+              <FilmCard film={film} key={film.id} />
+            ))}
           </div>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>
         </section>
-
-        <footer className="page-footer">
-          <div className="logo">
-            <a href="/" className="logo__link logo__link--light">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
-
-          <div className="copyright">
-            <p>© 2019 What to watch Ltd.</p>
-          </div>
-        </footer>
+        <LogoFooter/>
       </div>
     </div>
   );
