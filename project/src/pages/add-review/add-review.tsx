@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
+import { FilmsType } from '../../types/types';
 
-function AddReview(): JSX.Element {
+function AddReview({films}: FilmsType): JSX.Element {
   const params = useParams();
+  const filmId = Number(params.id);
+  const film = films.find((element) => element.id === filmId);
   return (
     <section className="film-card film-card--full">
       <div className="film-card__header">
         <div className="film-card__bg">
-          <img src="/img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+          <img src= {`/${film?.posterImage}`} alt= {film?.description} />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -22,10 +25,10 @@ function AddReview(): JSX.Element {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a href="film-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
+                <a href="film-page.html" className="breadcrumbs__link">{film?.description}</a>
               </li>
               <li className="breadcrumbs__item">
-                <a href="/" className="breadcrumbs__link">Add review ID: {params.id}</a>
+                <a href="/" className="breadcrumbs__link">Add review</a>
               </li>
             </ul>
           </nav>
@@ -43,7 +46,7 @@ function AddReview(): JSX.Element {
         </header>
 
         <div className="film-card__poster film-card__poster--small">
-          <img src="/img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+          <img src={`/${film?.posterImage}`} alt= {`${film?.description} poster`} width="218" height="327" />
         </div>
       </div>
 

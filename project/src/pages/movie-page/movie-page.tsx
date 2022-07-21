@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
+import { FilmsType } from '../../types/types';
 
-function MoviePage(): JSX.Element {
+function MoviePage({ films }: FilmsType): JSX.Element {
   const params = useParams();
+  const filmId = Number(params.id);
+  const film = films.find((element) => element.id === filmId);
   return (
     <section className="film-card film-card--full">
       <div className="film-card__hero">
         <div className="film-card__bg">
-          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel" />
+          <img src={`/${film?.posterImage}`} alt={film?.description} />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -34,10 +37,10 @@ function MoviePage(): JSX.Element {
 
         <div className="film-card__wrap">
           <div className="film-card__desc">
-            <h2 className="film-card__title">The Grand Budapest Hotel id:{params.id}</h2>
+            <h2 className="film-card__title">{film?.description}</h2>
             <p className="film-card__meta">
-              <span className="film-card__genre">Drama</span>
-              <span className="film-card__year">2014</span>
+              <span className="film-card__genre">{film?.genre}</span>
+              <span className="film-card__year">{film?.released}</span>
             </p>
 
             <div className="film-card__buttons">
@@ -63,7 +66,7 @@ function MoviePage(): JSX.Element {
       <div className="film-card__wrap film-card__translate-top">
         <div className="film-card__info">
           <div className="film-card__poster film-card__poster--big">
-            <img src="/img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+            <img src={`/${film?.posterImage}`} alt={`${film?.description} poster`} width="218" height="327" />
           </div>
 
           <div className="film-card__desc">
@@ -85,23 +88,12 @@ function MoviePage(): JSX.Element {
               <div className="film-card__text-col">
                 <p className="film-card__details-item">
                   <strong className="film-card__details-name">Director</strong>
-                  <span className="film-card__details-value">Wes Anderson</span>
+                  <span className="film-card__details-value">{film?.director}</span>
                 </p>
                 <p className="film-card__details-item">
                   <strong className="film-card__details-name">Starring</strong>
                   <span className="film-card__details-value">
-                    <p>Bill Murray </p>
-                    <p>Edward Norton</p>
-                    <p>Jude Law</p>
-                    <p>Willem Dafoe</p>
-                    <p>Saoirse Ronan</p>
-                    <p>Tony Revoloru</p>
-                    <p>Tilda Swinton</p>
-                    <p>Tom Wilkinson</p>
-                    <p>Owen Wilkinson</p>
-                    <p>Adrien pody</p>
-                    <p>Ralph Fiennes</p>
-                    <p>Jeff Goldblum</p>
+                    {film?.starring.map((elem) => `${elem},\n`)}
                   </span>
                 </p>
               </div>

@@ -1,7 +1,7 @@
 import FilmCard from '../../components/film-card/filmCard';
-import { AppMainProps } from '../../types/types';
+import { AppMainProps} from '../../types/types';
 
-function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
+function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Element {
   return (
     <div>
       <div className="visually-hidden">
@@ -135,26 +135,9 @@ function MainPage({title, releaseDate, genre}: AppMainProps): JSX.Element {
           </ul>
 
           <div className="catalog__films-list">
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
-            <FilmCard/>
+            {films.map((film) => (
+              <FilmCard film={film} key={film.id} />
+            ))}
           </div>
 
           <div className="catalog__more">
