@@ -30,6 +30,10 @@ export type FilmType = {
   film: FilmProps;
 }
 
+export type IsFooterType = {
+  isFooter?: boolean;
+}
+
 export type FilmsType = {
   films: Films;
 }
