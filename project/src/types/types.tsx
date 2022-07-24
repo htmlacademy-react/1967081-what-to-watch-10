@@ -6,6 +6,12 @@ export type AppMainProps = {
   films: Films;
 }
 
+export type VideoPlayerProps = {
+  film: FilmProps,
+  isPlaying: boolean,
+  setIsPlaying: (isPlaying: boolean) => void;
+}
+
 export type FilmProps = {
   id: number;
   name: string;
