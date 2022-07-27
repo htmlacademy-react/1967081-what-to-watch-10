@@ -1,13 +1,18 @@
 import { Fragment } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LogoFooter from '../../components/logo-footer/logo-footer';
 import Logo from '../../components/logo/logo';
+import MoviePageTabs from '../../components/movie-page-tabs/movie-page-tabs';
 import { FilmsType } from '../../types/types';
+import ErrorScreen404 from '../error-screen-404/error-screen-404';
 
 function MoviePage({ films }: FilmsType): JSX.Element {
   const params = useParams();
   const filmId = Number(params.id);
   const film = films.find((element) => element.id === filmId);
+  if (!film) {
+    return <ErrorScreen404/>;
+  }
   return (
     <Fragment>
       <section className="film-card film-card--full">
@@ -54,7 +59,11 @@ function MoviePage({ films }: FilmsType): JSX.Element {
                   <span>My list</span>
                   <span className="film-card__count">9</span>
                 </button>
-                <a href="add-review.html" className="btn film-card__button">Add review</a>
+                {/* заменить на авторизацию */}
+                {filmId !== 5 ?
+                  <Link to={`/films/${filmId}/review`} className="btn film-card__button">Add review</Link>
+                  :
+                  ''}
               </div>
             </div>
           </div>
@@ -65,52 +74,7 @@ function MoviePage({ films }: FilmsType): JSX.Element {
             <div className="film-card__poster film-card__poster--big">
               <img src={`/${film?.posterImage}`} alt={`${film?.description} poster`} width="218" height="327" />
             </div>
-
-            <div className="film-card__desc">
-              <nav className="film-nav film-card__nav">
-                <ul className="film-nav__list">
-                  <li className="film-nav__item">
-                    <a href="/" className="film-nav__link">Overview</a>
-                  </li>
-                  <li className="film-nav__item film-nav__item--active">
-                    <a href="/" className="film-nav__link">Details</a>
-                  </li>
-                  <li className="film-nav__item">
-                    <a href="/" className="film-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="film-card__text film-card__row">
-                <div className="film-card__text-col">
-                  <p className="film-card__details-item">
-                    <strong className="film-card__details-name">Director</strong>
-                    <span className="film-card__details-value">{film?.director}</span>
-                  </p>
-                  <p className="film-card__details-item">
-                    <strong className="film-card__details-name">Starring</strong>
-                    <span className="film-card__details-value">
-                      {film?.starring.map((elem) => `${elem},\n`)}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="film-card__text-col">
-                  <p className="film-card__details-item">
-                    <strong className="film-card__details-name">Run Time</strong>
-                    <span className="film-card__details-value">1h 39m</span>
-                  </p>
-                  <p className="film-card__details-item">
-                    <strong className="film-card__details-name">Genre</strong>
-                    <span className="film-card__details-value">Comedy</span>
-                  </p>
-                  <p className="film-card__details-item">
-                    <strong className="film-card__details-name">Released</strong>
-                    <span className="film-card__details-value">2014</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            <MoviePageTabs film = {film}/>
           </div>
         </div>
       </section>

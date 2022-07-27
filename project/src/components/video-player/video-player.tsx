@@ -4,7 +4,6 @@ import { VideoPlayerProps } from '../../types/types';
 function VideoPlayer({ film, isPlaying, setIsPlaying }: VideoPlayerProps): JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const { videoLink, posterImage } = film;
-  // let timerId: NodeJS.Timeout | undefined = undefined;
   useEffect(() => {
     if (videoRef.current === null) {
       return;
@@ -12,8 +11,8 @@ function VideoPlayer({ film, isPlaying, setIsPlaying }: VideoPlayerProps): JSX.E
 
     if (isPlaying) {
       videoRef.current.play();
-    }else {
-      videoRef.current.pause();
+    } else {
+      videoRef.current.load();
     }
   }, [isPlaying]);
 
