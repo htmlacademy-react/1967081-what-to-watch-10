@@ -1,14 +1,18 @@
 import { useParams } from 'react-router-dom';
 import { FilmsType } from '../../types/types';
+import ErrorScreen404 from '../error-screen-404/error-screen-404';
 
 function Player({films}: FilmsType): JSX.Element {
   const params = useParams();
   const filmId = Number(params.id);
   const film = films.find((element) => element.id === filmId);
+  if (!film) {
+    return <ErrorScreen404/>;
+  }
   return (
     <div className="player">
       <h1>ID: {params.id}</h1>
-      <video src={film?.videoLink} className = "player__video" poster = {film?.posterImage}></video>
+      <video src={film.videoLink} className = "player__video" poster = {film.posterImage}></video>
 
       <button type="button" className="player__exit">Exit</button>
 

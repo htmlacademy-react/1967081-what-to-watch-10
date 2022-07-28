@@ -5,7 +5,7 @@ import VideoPlayer from '../video-player/video-player';
 
 function FilmCard({ film }: FilmType): JSX.Element {
   const [isPlaying, setIsPlaying] = useState(false);
-  const { description, id } = film;
+  const { name, id } = film;
   let timer: NodeJS.Timeout | null = null;
   const handleArticleOnMouseEnter = () => {
     timer = setTimeout(() => {
@@ -31,7 +31,7 @@ function FilmCard({ film }: FilmType): JSX.Element {
 
       <h3 className="small-film-card__title">
         <Link to={`/films/${id}`} className="small-film-card__link">
-          {description}
+          {name}
         </Link>
       </h3>
 

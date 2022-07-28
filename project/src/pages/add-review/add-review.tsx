@@ -2,16 +2,20 @@ import { Link, useParams } from 'react-router-dom';
 import AddReviewComment from '../../components/add-review-comment/add-review-comment';
 import Logo from '../../components/logo/logo';
 import { FilmsType } from '../../types/types';
+import ErrorScreen404 from '../error-screen-404/error-screen-404';
 
 function AddReview({films}: FilmsType): JSX.Element {
   const params = useParams();
   const filmId = Number(params.id);
   const film = films.find((element) => element.id === filmId);
+  if (!film) {
+    return <ErrorScreen404/>;
+  }
   return (
     <section className="film-card film-card--full">
       <div className="film-card__header">
         <div className="film-card__bg">
-          <img src= {`/${film?.posterImage}`} alt= {film?.description} />
+          <img src= {`/${film.posterImage}`} alt= {film.description} />
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -20,7 +24,7 @@ function AddReview({films}: FilmsType): JSX.Element {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <Link to = {`/films/${filmId}`} className="breadcrumbs__link">{film?.description}</Link>
+                <Link to = {`/films/${filmId}`} className="breadcrumbs__link">{film.description}</Link>
               </li>
               <li className="breadcrumbs__item">
                 <Link to = {`/films/${filmId}/review`} className="breadcrumbs__link">Add review</Link>
@@ -41,7 +45,7 @@ function AddReview({films}: FilmsType): JSX.Element {
         </header>
 
         <div className="film-card__poster film-card__poster--small">
-          <img src={`/${film?.posterImage}`} alt= {`${film?.description} poster`} width="218" height="327" />
+          <img src={`/${film.posterImage}`} alt= {`${film.description} poster`} width="218" height="327" />
         </div>
       </div>
       <AddReviewComment/>

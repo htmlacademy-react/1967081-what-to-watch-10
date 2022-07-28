@@ -18,7 +18,7 @@ function MoviePage({ films }: FilmsType): JSX.Element {
       <section className="film-card film-card--full">
         <div className="film-card__hero">
           <div className="film-card__bg">
-            <img src={`/${film?.posterImage}`} alt={film?.description} />
+            <img src={`/${film.posterImage}`} alt={film.name} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -39,10 +39,10 @@ function MoviePage({ films }: FilmsType): JSX.Element {
 
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">{film?.description}</h2>
+              <h2 className="film-card__title">{film.name}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{film?.genre}</span>
-                <span className="film-card__year">{film?.released}</span>
+                <span className="film-card__genre">{film.genre}</span>
+                <span className="film-card__year">{film.released}</span>
               </p>
 
               <div className="film-card__buttons">
@@ -72,7 +72,7 @@ function MoviePage({ films }: FilmsType): JSX.Element {
         <div className="film-card__wrap film-card__translate-top">
           <div className="film-card__info">
             <div className="film-card__poster film-card__poster--big">
-              <img src={`/${film?.posterImage}`} alt={`${film?.description} poster`} width="218" height="327" />
+              <img src={`/${film.posterImage}`} alt={`${film.name} poster`} width="218" height="327" />
             </div>
             <MoviePageTabs film = {film}/>
           </div>

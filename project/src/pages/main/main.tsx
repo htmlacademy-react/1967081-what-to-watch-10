@@ -1,10 +1,22 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FilmCard from '../../components/film-card/filmCard';
 import LogoFooter from '../../components/logo-footer/logo-footer';
 import Logo from '../../components/logo/logo';
 import { AppMainProps } from '../../types/types';
+const beginRenderedFilmsQuantity = 8;
+const renderedFilmsQuantityStep = 4;
 
 function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Element {
+  const [maxRenderedFilmsQuantity, setMaxRenderedFilmsQuantity] = useState(beginRenderedFilmsQuantity);
+  const handlerShowMoreButtonClick = () => {
+    if (maxRenderedFilmsQuantity + renderedFilmsQuantityStep < films.length) {
+      setMaxRenderedFilmsQuantity(maxRenderedFilmsQuantity + renderedFilmsQuantityStep);
+    } else {
+      setMaxRenderedFilmsQuantity(films.length);
+    }
+  };
+  let renderedFilmsQuantity = 0;
   return (
     <div>
       <div className="visually-hidden">
@@ -133,13 +145,17 @@ function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Eleme
           </ul>
 
           <div className="catalog__films-list">
-            {films.map((film) => (
-              <FilmCard film={film} key={film.id} />
-            ))}
+            {films.map((film, index) => {
+              renderedFilmsQuantity++;
+              if (renderedFilmsQuantity <= maxRenderedFilmsQuantity) {
+                return <FilmCard film={film} key={film.id}/>;
+              }
+              return '';
+            }
+            )}
           </div>
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
+          <div className={`catalog__more ${films.length > maxRenderedFilmsQuantity ? '' : 'visually-hidden'}`}>
+            <button className="catalog__button" type="button" onClick={handlerShowMoreButtonClick}>Show more</button>
           </div>
         </section>
         <LogoFooter />
