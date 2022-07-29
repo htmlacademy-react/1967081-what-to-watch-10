@@ -42,7 +42,6 @@ function MoviePageOverview({ film }: FilmType): JSX.Element {
       </div>
       <div className="film-card__text">
         <p>{description}</p>
-        <p>{description}</p>
         <p className="film-card__director"><strong>Director: {director}</strong></p>
         <p className="film-card__starring"><strong>Starring: {filmStarring}</strong></p>
       </div>

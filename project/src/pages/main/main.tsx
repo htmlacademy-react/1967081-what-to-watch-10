@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FilmCard from '../../components/film-card/filmCard';
@@ -6,6 +7,7 @@ import Logo from '../../components/logo/logo';
 import { AppMainProps } from '../../types/types';
 const beginRenderedFilmsQuantity = 8;
 const renderedFilmsQuantityStep = 4;
+
 
 function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Element {
   const [maxRenderedFilmsQuantity, setMaxRenderedFilmsQuantity] = useState(beginRenderedFilmsQuantity);
@@ -148,7 +150,7 @@ function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Eleme
             {films.map((film, index) => {
               renderedFilmsQuantity++;
               if (renderedFilmsQuantity <= maxRenderedFilmsQuantity) {
-                return <FilmCard film={film} key={film.id}/>;
+                return <FilmCard film={film} key={uuidv4()}/>;
               }
               return '';
             }

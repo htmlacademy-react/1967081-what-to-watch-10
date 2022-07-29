@@ -22,7 +22,7 @@ function FilmCommentsColumn({ columnNumber, filmComments }: FilmCommentsColumnTy
   let keyIndex = 0;
   return (
     <React.Fragment>
-      {filmColumnComments.map((elem , index) => <FilmComment filmReview = {elem} key = {keyIndex++}/>)};
+      {filmColumnComments.map((elem , index) => <FilmComment filmReview = {elem} key = {keyIndex++}/>)}
     </React.Fragment>
   );
 }

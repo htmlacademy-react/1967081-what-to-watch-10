@@ -1,5 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
 import { Fragment } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import FilmCard from '../../components/film-card/filmCard';
 import LogoFooter from '../../components/logo-footer/logo-footer';
 import Logo from '../../components/logo/logo';
 import MoviePageTabs from '../../components/movie-page-tabs/movie-page-tabs';
@@ -11,7 +13,7 @@ function MoviePage({ films }: FilmsType): JSX.Element {
   const filmId = Number(params.id);
   const film = films.find((element) => element.id === filmId);
   if (!film) {
-    return <ErrorScreen404/>;
+    return <ErrorScreen404 />;
   }
   return (
     <Fragment>
@@ -74,11 +76,27 @@ function MoviePage({ films }: FilmsType): JSX.Element {
             <div className="film-card__poster film-card__poster--big">
               <img src={`/${film.posterImage}`} alt={`${film.name} poster`} width="218" height="327" />
             </div>
-            <MoviePageTabs film = {film}/>
+            <MoviePageTabs film={film} />
           </div>
         </div>
       </section>
-      <LogoFooter />
+      <div className="page-content">
+        <section className="catalog catalog--like-this">
+          <h2 className="catalog__title">More like this</h2>
+
+          <div className="catalog__films-list">
+            {films.map((elem, index) => {
+              const maxRenderedFilmsQuantity = 4;
+              if (index < maxRenderedFilmsQuantity) {
+                return <FilmCard film={elem} key={uuidv4()}/>;
+              }
+              return '';
+            }
+            )}
+          </div>
+        </section>
+        <LogoFooter />
+      </div>
     </Fragment>);
 }
 
