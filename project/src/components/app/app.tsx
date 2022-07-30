@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthorizationStatus } from '../../const';
 import AddReview from '../../pages/add-review/add-review';
 import ErrorScreen404 from '../../pages/error-screen-404/error-screen-404';
-import MainPage from '../../pages/main/main';
+import MainPage from '../../pages/main-page/main-page';
 import MoviePage from '../../pages/movie-page/movie-page';
 import MyList from '../../pages/my-list/my-list';
 import Player from '../../pages/player/player';
