@@ -4,3 +4,17 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN'
 }
 
+export enum FilmCardTabs {
+  Overview = 'Overview',
+  Details = 'Details',
+  Reviews = 'Reviews',
+}
+
+export enum FilmLevels {
+  Bad = 'Bad',
+  Normal = 'Normal',
+  Good = 'Good',
+  VeryGood = 'Very good',
+  Awesome = 'Awesome'
+}
+

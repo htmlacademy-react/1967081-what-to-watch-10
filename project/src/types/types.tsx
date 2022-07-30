@@ -45,3 +45,16 @@ export type FilmsType = {
 }
 
 export type Films = FilmProps[];
+
+export type FilmReviewType = {
+  comment: string;
+  date: string;
+  id: number;
+  rating : number;
+  user : {
+    id: number;
+    name: string;
+  }
+}
+
+export type FilmComments = FilmReviewType[];
