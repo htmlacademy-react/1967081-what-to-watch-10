@@ -18,3 +18,13 @@ export enum FilmLevels {
   Awesome = 'Awesome'
 }
 
+export const GENRES = {
+  ALLGENRES: 'All genres',
+  DRAMA: 'Drama',
+  FANTASTIC: 'Fantastic',
+  FIGHTING: 'Fighting',
+  COMEDY: 'Comedy',
+  MELODRAM: 'MELODRAM',
+  DOCUMENTAL: 'Documental',
+};
+

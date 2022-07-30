@@ -5,17 +5,20 @@ import FilmCard from '../../components/film-card/filmCard';
 import LogoFooter from '../../components/logo-footer/logo-footer';
 import Logo from '../../components/logo/logo';
 import { AppMainProps } from '../../types/types';
+import GenresList from '../../components/genres-list/genres-list';
+import { useAppSelector } from '../../hooks';
 const beginRenderedFilmsQuantity = 8;
 const renderedFilmsQuantityStep = 4;
 
 
-function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Element {
+function MainPage({ title, releaseDate, genre, films}: AppMainProps): JSX.Element {
+  const stateFilms = useAppSelector((state) => state.films);
   const [maxRenderedFilmsQuantity, setMaxRenderedFilmsQuantity] = useState(beginRenderedFilmsQuantity);
   const handlerShowMoreButtonClick = () => {
-    if (maxRenderedFilmsQuantity + renderedFilmsQuantityStep < films.length) {
+    if (maxRenderedFilmsQuantity + renderedFilmsQuantityStep < stateFilms.length) {
       setMaxRenderedFilmsQuantity(maxRenderedFilmsQuantity + renderedFilmsQuantityStep);
     } else {
-      setMaxRenderedFilmsQuantity(films.length);
+      setMaxRenderedFilmsQuantity(stateFilms.length);
     }
   };
   let renderedFilmsQuantity = 0;
@@ -112,42 +115,9 @@ function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Eleme
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
-
-          <ul className="catalog__genres-list">
-            <li className="catalog__genres-item catalog__genres-item--active">
-              <a href="/" className="catalog__genres-link">All genres</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Comedies</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Crime</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Documentary</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Dramas</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Horror</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Kids & Family</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Romance</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Sci-Fi</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="/" className="catalog__genres-link">Thrillers</a>
-            </li>
-          </ul>
-
+          <GenresList films = {films}/>
           <div className="catalog__films-list">
-            {films.map((film, index) => {
+            {stateFilms.map((film, index) => {
               renderedFilmsQuantity++;
               if (renderedFilmsQuantity <= maxRenderedFilmsQuantity) {
                 return <FilmCard film={film} key={uuidv4()}/>;
@@ -156,7 +126,7 @@ function MainPage({ title, releaseDate, genre, films }: AppMainProps): JSX.Eleme
             }
             )}
           </div>
-          <div className={`catalog__more ${films.length > maxRenderedFilmsQuantity ? '' : 'visually-hidden'}`}>
+          <div className={`catalog__more ${stateFilms.length > maxRenderedFilmsQuantity ? '' : 'visually-hidden'}`}>
             <button className="catalog__button" type="button" onClick={handlerShowMoreButtonClick}>Show more</button>
           </div>
         </section>
