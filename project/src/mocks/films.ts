@@ -16,7 +16,7 @@ export const FILMS: Films = [
     director: 'Avatar',
     starring: ['Avatar', 'Avatar', 'Avatar'],
     runTime: 111,
-    genre: 'Avatar',
+    genre: 'Drama',
     released: 2022,
     isFavorite: true
   },
@@ -35,7 +35,7 @@ export const FILMS: Films = [
     director: 'Aviator',
     starring: ['Aviator1111', 'Aviator22222', 'Aviator333333' , 'Aviator444444', 'Aviator5555555'],
     runTime: 112,
-    genre: 'Aviator',
+    genre: 'Fighting',
     released: 2022,
     isFavorite: false
   },
@@ -54,7 +54,7 @@ export const FILMS: Films = [
     director: 'bg-the-grand-budapest-hotel',
     starring: ['bg-the-grand-budapest-hotel', 'bg-the-grand-budapest-hotel', 'bg-the-grand-budapest-hotel'],
     runTime: 113,
-    genre: 'bg-the-grand-budapest-hotel',
+    genre: 'Comedy',
     released: 2022,
     isFavorite: false
   },
@@ -73,7 +73,7 @@ export const FILMS: Films = [
     director: 'bohemian-rhapsody',
     starring: ['bohemian-rhapsody', 'bohemian-rhapsody', 'bohemian-rhapsody'],
     runTime: 114,
-    genre: 'bohemian-rhapsody',
+    genre: 'Melodram',
     released: 2022,
     isFavorite: false
   },
@@ -92,7 +92,7 @@ export const FILMS: Films = [
     director: 'dardjeeling-limited',
     starring: ['dardjeeling-limited', 'dardjeeling-limited', 'dardjeeling-limited'],
     runTime: 115,
-    genre: 'dardjeeling-limited',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: true
   },
@@ -111,7 +111,7 @@ export const FILMS: Films = [
     director: 'fantastic-beasts-the-crimes-of-grindelwald',
     starring: ['fantastic-beasts-the-crimes-of-grindelwald', 'fantastic-beasts-the-crimes-of-grindelwald', 'fantastic-beasts-the-crimes-of-grindelwald'],
     runTime: 116,
-    genre: 'fantastic-beasts-the-crimes-of-grindelwald',
+    genre: 'Documental',
     released: 2022,
     isFavorite: false
   },
@@ -130,7 +130,7 @@ export const FILMS: Films = [
     director: 'macbeth',
     starring: ['macbeth', 'macbeth', 'macbeth'],
     runTime: 111,
-    genre: 'macbeth',
+    genre: 'Drama',
     released: 2022,
     isFavorite: true
   },
@@ -149,7 +149,7 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Drama',
     released: 2022,
     isFavorite: false
   },
@@ -168,7 +168,7 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Drama',
     released: 2022,
     isFavorite: false
   },
@@ -187,7 +187,7 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Drama',
     released: 2022,
     isFavorite: false
   },
@@ -206,7 +206,7 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Documental',
     released: 2022,
     isFavorite: false
   },
@@ -225,12 +225,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Documental',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 13,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -244,12 +244,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Documental',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 14,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -263,12 +263,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 15,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -282,12 +282,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 16,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -301,12 +301,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 17,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -320,12 +320,12 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: false
   },
   {
-    id: 12,
+    id: 18,
     name: 'no-country-for-old-men',
     posterImage: 'img/no-country-for-old-men.jpg',
     previewImage: 'img/no-country-for-old-men.jpg',
@@ -339,7 +339,7 @@ export const FILMS: Films = [
     director: 'no-country-for-old-men',
     starring: ['no-country-for-old-men', 'no-country-for-old-men', 'no-country-for-old-men'],
     runTime: 118,
-    genre: 'no-country-for-old-men',
+    genre: 'Fantastic',
     released: 2022,
     isFavorite: false
   }
